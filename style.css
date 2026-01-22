@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== BACKGROUND COMPANY ===== */
+body {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1497366216548-37526070297c");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* overlay corporate */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 40, 0.65);
+  z-index: 0;
+}
+
+/* ===== LOGIN CARD ===== */
+.card {
+  position: relative;
+  z-index: 1;
+
+  width: 420px;
+  padding: 40px;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  text-align: center;
+
+  animation: slideFade 1s ease;
+}
+
+/* animasi masuk */
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* logo / title */
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* input */
+.card input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+/* button */
+.card button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.card button:hover {
+  transform: scale(1.05);
+}
+
+#error {
+  margin-top: 15px;
+  color: #ffb4b4;
+}
