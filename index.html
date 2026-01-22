@@ -5,7 +5,38 @@
   <title>Company Portal | Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "ISI_PUNYA_KAMU",
+    authDomain: "ISI_PUNYA_KAMU",
+    projectId: "ISI_PUNYA_KAMU",
+    appId: "ISI_PUNYA_KAMU"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+  function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(() => {
+        window.location.href = "dashboard.html";
+      })
+      .catch((error) => {
+        document.getElementById("error").innerText = error.message;
+      });
+  }
+</script>
+
 <body>
+
 
   <div class="card">
     <div class="logo">COMPANY PORTAL</div>
